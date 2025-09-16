@@ -12,7 +12,7 @@ public class Controller {
 	@GetMapping("/get")
 	public String getReqRes() {
 
-		return "get 방식 요청의 응답 데이터~ test";
+		return "get 방식 ";
 
 	}
 	
