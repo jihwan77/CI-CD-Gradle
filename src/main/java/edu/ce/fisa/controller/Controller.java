@@ -11,7 +11,9 @@ public class Controller {
 	//http://localhost:8080/app/get
 	@GetMapping("/get")
 	public String getReqRes() {
-		return "get 방식 요청의 응답 데이터 test";
+
+		return "get 방식 요청의 응답 데이터~ test";
+
 	}
 	
 	//http://localhost:8080/app/post 
