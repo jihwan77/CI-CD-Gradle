@@ -270,8 +270,8 @@ done
 단일 서버에서 동작하던 환경을 확장하여,  
 **빌드 서버(Jenkins)와 실행 서버(WAS)를 분리한 멀티 서버 구조**로 발전시켰다.  
 
+<img width="6448" height="3080" alt="image (5)" src="https://github.com/user-attachments/assets/67fddedd-5684-4491-a6f4-1aae4e178396" />
 
-<img width="6448" height="3080" alt="image (4)" src="https://github.com/user-attachments/assets/53cfe364-7fcf-41d8-9c1d-064d4fbe472c" />
 
 구축 과정은 **서버 분리 → 네트워크 및 IP 설정 → SSH key 생성 및 추가 → 자동화 스크립트 적용** 단계를 통해 진행되었다.
 
@@ -287,8 +287,7 @@ done
 - 따라서 **브리지 네트워크**로 전환하여, VM이 로컬 네트워크의 독립 서버처럼 동작하도록 구성.  
 - 이를 통해 **다른 노트북의 Jenkins 서버 ↔ WAS 서버 간 직접 통신**이 가능해졌다.
 
-<img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/e7ee5f6b-259a-44e4-9f9d-ae8540c78450" />
-
+<img width="600" height="300" alt="image (6)" src="https://github.com/user-attachments/assets/8d9d7bbc-a6a8-47a5-b587-a8ff0d34a5ec" />
 
 ---
 
@@ -335,9 +334,9 @@ ip a
 
 ### 🔹 3단계: SSH 키 기반 인증
 
-- 서버 간 파일 전송이나 **원격 접속 시 매번 비밀번호 입력은 비효율적**이다.  
-- **SSH Key Pair를 생성·교환**해 **비밀번호 없이 접속할 수 있도록 설정**한다.  
-- 이를 통해 Jenkins에서 WAS로 **자동 파일 배포**가 가능해진다.  
+- 서버 간 파일 전송이나 **원격 접속 시 매번 비밀번호 입력은 비효율적**
+- **SSH Key Pair를 생성·교환**해 **비밀번호 없이 접속할 수 있도록 설정**
+- 이를 통해 Jenkins에서 WAS로 **자동 파일 배포**가 가능해짐.
 
 ```bash
 # SSH 키 쌍 생성 (Jenkins 서버에서 실행)
@@ -446,8 +445,8 @@ chmod 770 check_modify_scp.sh
 ./check_modify.sh step03_teamArt
 ```
 
-- Jenkins에서 **빌드 → scp 전송**이 이뤄지면,  
-- WAS 서버에서 동작하는 **감시 스크립트**가 이를 감지하여 **기존 애플리케이션을 종료하고 최신 JAR로 재실행**한다.
+Jenkins에서 **빌드 → scp 전송**이 이뤄지면,  
+WAS 서버에서 동작하는 **감시 스크립트**가 이를 감지하여 **기존 애플리케이션을 종료하고 최신 JAR로 재실행**한다.
 
 ---
 
