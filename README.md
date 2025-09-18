@@ -1,4 +1,4 @@
-# 🚀 Jenkins CI/CD
+# 🚀 하이브리드 클라우드 인프라를 위한 CI/CD 파이프라인 자동화 구축
 
 ## 🎯 프로젝트 목적
 
@@ -60,7 +60,7 @@
 
 ## 1️⃣ Spring Application 생성 (Gradle)
 
-### a. 예시 코드
+### a. 코드
 ```java
 @RestController
 @RequestMapping("step04")
@@ -89,7 +89,7 @@ curl "http://localhost:8080/app/get"
 
 ---
 
-## 2️⃣ Jenkins 컨테이너 생성
+## 2️⃣ Docker 기반의 Jenkins 서버 생성
 
 ### a. 호스트 폴더 생성
 ```bash
@@ -100,7 +100,7 @@ mkdir /home/vboxuser/hostvol
 cp build/libs/*.jar ~/hostvol/app.jar
 ```
 
-### b. Docker로 Jenkins 실행
+### b. Jenkins 실행
 
 #### 📌 Bind Mount 개념
 > 호스트 디렉토리를 컨테이너 내부 경로에 직접 연결하는 방식  
@@ -265,7 +265,7 @@ done
 
 ---
 
-## 6️⃣ 네트워크 & 서버 통신
+## 6️⃣ 시스템 아키텍처
 
 단일 서버에서 동작하던 환경을 확장하여,  
 **빌드 서버(Jenkins)와 실행 서버(WAS)를 분리한 멀티 서버 구조**로 발전시켰다.  
