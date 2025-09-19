@@ -91,6 +91,8 @@ curl "http://localhost:8080/app/get"
 
 ## 2️⃣ Docker 기반의 Jenkins 서버 생성
 
+- ubuntu환경에 Jenkins와 연결하기 위한 디렉토리(호스트 폴더)를 생성하고 Jenkins에 jar파일이 생기는 디렉토리를 연결
+
 ### a. 호스트 폴더 생성
 ```bash
 # mount할 호스트 디렉토리 생성
@@ -130,7 +132,16 @@ docker run --name myjenkins   -v /home/vboxuser/hostvol:/var/jenkins_home/worksp
 
 ## 3️⃣ Jenkins Pipeline 생성
 
-```groovy
+### Jenkins Pipeline이란?
+
+코드 기반(CI/CD as Code):
+> Jenkins 작업 과정을 Jenkinsfile이라는 텍스트 파일(Groovy DSL)로 정의
+
+자동화 파이프라인:
+> 소스 코드 저장소에 Jenkinsfile을 넣어두면, 코드 변경 → 빌드 → 테스트 → 배포 전체 흐름을 자동으로 실행
+
+```
+groovy
 pipeline {
     agent any
 
